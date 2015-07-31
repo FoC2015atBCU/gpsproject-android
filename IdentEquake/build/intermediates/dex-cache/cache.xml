@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\code\IdentEquake\IdentEquake\libs\ParseCrashReporting-1.9.4.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="7a11f2d74111fd9b02c2d091a1b76b82f6a4357e">
+        <dex dex="C:\code\IdentEquake\IdentEquake\build\intermediates\pre-dexed\debug\ParseCrashReporting-1.9.4-dac92e19c4ff5f78c6de77ddf5ff9f9f5872de1f.jar" />
+    </item>
+    <item
+        jar="C:\code\IdentEquake\IdentEquake\libs\Parse-1.9.4.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="56c22930b5d4f77015b6a40c7f14103d3e101001">
+        <dex dex="C:\code\IdentEquake\IdentEquake\build\intermediates\pre-dexed\debug\Parse-1.9.4-f5415d840c3b2ac1f9912066c710e458b5a9cebd.jar" />
+    </item>
+    <item
+        jar="C:\Users\Bhish\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.2.0\6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd\bolts-android-1.2.0.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
+        <dex dex="C:\code\IdentEquake\IdentEquake\build\intermediates\pre-dexed\debug\bolts-android-1.2.0-eb2d20016c87aea8846e2d36c6e2ee0567d06011.jar" />
+    </item>
+
+</items>

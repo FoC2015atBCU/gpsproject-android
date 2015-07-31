@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"><![CDATA[
+    tools:context=".IdentEquakeProjectActivity">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ]]>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Status:"
+            android:id="@+id/textView8"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/statusText"
+            android:layout_gravity="center_vertical"
+            android:text="Normal" />
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:id="@+id/buttonGreen"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/earthquake_green"
+        android:layout_weight="1" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:id="@+id/buttonYellow"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/earthuake_amber"
+        android:layout_weight="1" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:id="@+id/buttonRed"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/disaster"
+        android:layout_weight="1" />
+</LinearLayout>
