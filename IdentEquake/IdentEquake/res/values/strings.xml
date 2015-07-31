@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="parse_app_id">aCmlLCqjhRxWBMPeD2HxDpjOlqzk9oNOQ0MuPg84</string>
-    <string name="parse_client_key">b5LDXECzns2CNR1s52sPLkkBbAxWEn6qePKgQWhR</string>
+    <string name="parse_app_id">N2JqJz0aiZJCI8AsS54lIGS2ZPkIrnuAjjNwMDMp</string>
+    <string name="parse_client_key">AbxBC1Ta0Jk2XwNpuZbVO75n0hh8cLwglEoE3YV9</string>
 
     <string name="hello">Hello World, IdentEquakeProjectActivity!</string>
     <string name="app_name">IdentIquake</string>

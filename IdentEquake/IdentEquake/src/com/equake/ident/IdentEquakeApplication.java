@@ -20,7 +20,7 @@ public class IdentEquakeApplication extends Application {
     Parse.enableLocalDatastore(this);
 
     // Add your initialization code here
-    Parse.initialize(this, "aCmlLCqjhRxWBMPeD2HxDpjOlqzk9oNOQ0MuPg84", "b5LDXECzns2CNR1s52sPLkkBbAxWEn6qePKgQWhR");
+    Parse.initialize(this, "N2JqJz0aiZJCI8AsS54lIGS2ZPkIrnuAjjNwMDMp", "AbxBC1Ta0Jk2XwNpuZbVO75n0hh8cLwglEoE3YV9");
 
 
     ParseUser.enableAutomaticUser();

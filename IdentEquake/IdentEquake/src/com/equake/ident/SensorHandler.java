@@ -15,7 +15,7 @@ public class SensorHandler implements SensorEventListener {
 
     private IdentEquakeProjectActivity mainActivity;
 
-    private final float UPPER_Y = 4f, LOWER_Y = -4f;
+    private final float UPPER_Y = 0.2f, LOWER_Y = -0.2f;
     private final int TIMER_THRESHOLD = 10000; //10 seconds
 
     private boolean hitUpper = false, hitLower = false;
@@ -57,7 +57,7 @@ public class SensorHandler implements SensorEventListener {
 
             if (quakeQueue.size() == 5 &&
                     quakeQueue.peekLast().getTime() - quakeQueue.remove().getTime() <= TIMER_THRESHOLD) {
-                mainActivity.statusText.setText("In an Earthquake!!");
+                mainActivity.reportQuake(9.0, "an Earthquake!!");
             }
         }
     }

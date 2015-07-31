@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.ParseACL;
 import com.parse.ParseAnalytics;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
@@ -31,6 +32,8 @@ public class IdentEquakeProjectActivity extends Activity implements LocationList
 	public double magnitude = 0;
 
 	public TextView statusText;
+
+	private boolean quakeDetected = false;
 
 	/** Called when the activity is first created. */
 	public void onCreate(Bundle savedInstanceState) {
@@ -52,19 +55,19 @@ public class IdentEquakeProjectActivity extends Activity implements LocationList
 		buttonGreen.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				reportQuake(1.0, "Tremor");
+				reportQuake(1.0, "a Tremor");
 			}
 		});
 		buttonYellow.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				reportQuake(5.0, "Severe Earthquake");
+				reportQuake(5.0, "a Bad Earthquake");
 			}
 		});
 		buttonRed.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				reportQuake(9.0, "Apocalypse");
+				reportQuake(9.0, "an Absolute Disaster");
 			}
 		});
 
@@ -76,7 +79,7 @@ public class IdentEquakeProjectActivity extends Activity implements LocationList
 		senSensorManager.registerListener(sensorHandler, senAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
 	}
 
-	private void reportQuake(double magnitude, String quakeSeverity) {
+	public void reportQuake(double magnitude, String quakeSeverity) {
 		this.magnitude = magnitude;
 		locationProvider = locationManager.getBestProvider(locationCriteria, true);
 
@@ -85,12 +88,14 @@ public class IdentEquakeProjectActivity extends Activity implements LocationList
 
 		if (lastLocation != null) {
 			System.out.println("Provider " + locationProvider + " has been selected.");
+			quakeDetected = true;
 			onLocationChanged(lastLocation);
 		} else {
 			System.out.println("No Signal");
+			Toast.makeText(getApplicationContext(), "No location signal!", Toast.LENGTH_LONG).show();
 		}
 
-		statusText.setText("In a " + quakeSeverity);
+		statusText.setText("In " + quakeSeverity);
 	}
 
 	/* Request updates at startup */
@@ -112,11 +117,21 @@ public class IdentEquakeProjectActivity extends Activity implements LocationList
 		double lat = location.getLatitude();
 		double lng = location.getLongitude();
 
-		ParseGeoPoint currentLocation = new ParseGeoPoint(lat, lng);
-		ParseObject reportClick = new ParseObject("QuakeLoc");
-		reportClick.put("Location", currentLocation);
-		reportClick.put("Magnitude", magnitude);
-		reportClick.saveInBackground();
+
+		if (quakeDetected) {
+			ParseGeoPoint currentLocation = new ParseGeoPoint(lat, lng);
+			ParseACL acl = new ParseACL();
+			acl.setPublicReadAccess(true);
+			acl.setPublicWriteAccess(true);
+
+			ParseObject reportClick = new ParseObject("location");
+			reportClick.setACL(acl);
+			reportClick.put("location", currentLocation);
+			reportClick.put("Magnitude", magnitude);
+			reportClick.saveInBackground();
+			Toast.makeText(getApplicationContext(), "Quake reported to the government", Toast.LENGTH_LONG).show();
+			quakeDetected = false;
+		}
 	}
 
 	@Override
